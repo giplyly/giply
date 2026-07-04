@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallo Sayanggg Mantan Kandung ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        love: {
+                            main: '#FF4B6E',
+                            soft: '#FF8A9F',
+                            dark: '#D6284C',
+                            light: '#FFF0F3',
+                            purple: '#9D4EDD'
+                        }
+                    },
+                    fontFamily: {
+                        cinta: ['"Great Vibes"', 'cursive', 'sans-serif'],
+                        utama: ['"Poppins"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+            .animasi-muncul { animation: muncul 1s ease forwards; }
+            .animasi-geser { animation: geser 1.5s ease-in-out infinite alternate; }
+            .animasi-berkedip { animation: berkedip 1s step-end infinite; }
+            .animasi-hati { animation: jatuh 6s linear infinite; }
+            .animasi-bintang { animation: berkilau 3s ease-in-out infinite; }
+            .animasi-ketik { overflow: hidden; white-space: nowrap; border-right: 3px solid #FF4B6E; }
+            .gradien-cantik { background: linear-gradient(135deg, #FF4B6E 0%, #9D4EDD 100%); }
+            .latar-tembus { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+        @keyframes muncul { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+        @keyframes geser { from { transform: translateY(-5px); } to { transform: translateY(5px); } }
+        @keyframes berkedip { 0%,100% { border-color:transparent; } 50% { border-color:#FF4B6E; } }
+        @keyframes jatuh { 0% { transform: translateY(-10vh) rotate(0deg); opacity:1; } 100% { transform: translateY(110vh) rotate(360deg); opacity:0.3; } }
+        @keyframes berkilau { 0%,100% { opacity:0.5; transform: scale(1); } 50% { opacity:1; transform: scale(1.2); } }
+    </style>
+</head>
+<body class="font-utama bg-gradient-to-br from-love-light via-pink-50 to-purple-50 min-h-screen overflow-x-hidden">
+
+    <!-- 🎬 LAYAR PEMUAT -->
+    <div id="layarMuatan" class="fixed inset-0 z-50 gradien-cantik flex flex-col items-center justify-center">
+        <div class="text-white text-5xl mb-6 animasi-geser"><i class="fa fa-heart"></i></div>
+        <h2 class="text-white text-2xl md:text-4xl font-cinta mb-4">Hallo Sayanggg Mantan Kandung</h2>
+        <div class="w-64 h-2 bg-white/30 rounded-full overflow-hidden">
+            <div class="bg-white h-full w-3/4 rounded-full animate-pulse"></div>
+        </div>
+        <p class="text-white/80 mt-4">Sedang menyiapkan keindahan untukmu...</p>
+    </div>
+
+    <!-- ✨ LATAR BELAKANG EFEK HATI & BINTANG -->
+    <div id="wadahEfek" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- 🎵 PEMUTAR MUSIK -->
+    <div class="fixed top-4 right-4 z-40 latar-tembus rounded-full p-3 shadow-lg">
+        <button id="tombolMusik" class="text-love-main text-xl hover:scale-110 transition-transform">
+            <i class="fa fa-music"></i>
+        </button>
+        <audio id="musikLatar" loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+        
+    </div>
+
+    <!-- 📱 ISI UTAMA -->
+    <div class="relative z-10 container mx-auto px-4 py-8">
+
+        <!-- 💌 KEPALA HALAMAN -->
+        <header class="text-center mb-12 animasi-muncul">
+            <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-cinta text-love-main text-shadow mb-2">Hallo Sayanggg Mantan Kandung ❤️</h1>
+            <p class="text-gray-700 text-lg md:text-xl">Tempat di mana setiap detik bersamamu adalah kenangan terindahku selamanya</p>
+            
+            <!-- ⏱️ HITUNGAN WAKTU JADIAN -->
+            <div class="mt-8 latar-tembus max-w-md mx-auto p-5 rounded-2xl shadow-xl">
+                <h3 class="text-love-dark font-semibold mb-2">💖 Kita bersama sejak:</h3>
+                <div id="hitungWaktu" class="flex justify-center gap-3 text-xl font-medium text-gray-800"></div>
+                <p class="text-xs text-gray-600 mt-2">*Ubah tanggal di bagian kode sesuai hari jadian kalian</p>
+            </div>
+        </header>
+
+        <!-- 🎠 GALERI SLIDE FOTO & KATA KATA ROMANTIS -->
+        <section class="max-w-4xl mx-auto mb-16 animasi-muncul" style="animation-delay: 0.3s;">
+            <div class="relative rounded-3xl shadow-2xl overflow-hidden bg-white/40 backdrop-blur-md">
+                <div id="wadahSlide" class="relative h-[clamp(320px,70vh,550px)]">
+                    
+                    <!-- 📸 FOTO 1 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto1.jpg" alt="Wajah manis yang menutup separuh wajah" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Saat kau menutup sebagian wajahmu, justru semakin terpancar pesona yang membuatku jatuh cinta berkali‑kali. Di matamu, aku menemukan seluruh dunia yang paling indah ❤️"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 2 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto2.jpg" alt="Tatapan teduh dan tulus" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Setiap kali kau menatapku seperti ini, rasanya semua lelah hilang seketika. Tatapanmu adalah rumah tempat hatiku selalu pulang dengan bahagia 🥰"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 3 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto3.jpg" alt="Senyum manis yang menawan" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Senyummu adalah keajaiban terindah yang Tuhan berikan padaku. Tak ada kata yang cukup untuk menggambarkan betapa berartinya senyummu bagiku selamanya ✨"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 4 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto4.jpg" alt="Gaya manis dan lembut" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Segala gerak‑gerikmu selalu terlihat begitu anggun dan manis. Seolah‑olah dunia diciptakan hanya untuk membuatmu tampak paling cantik di antara yang lain ❤️"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 5 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto5.jpg" alt="Ekspresi tenang dan damai" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Bersamamu, hatiku selalu merasa damai dan tenang seperti ini. Kamu adalah ketenangan yang selalu kucari di setiap detik hidupku 🕊️💕"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 6 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto6.jpg" alt="Senyum lembut yang tulus" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Senyum kecil yang tulus darimu jauh lebih berharga daripada segala hal di dunia ini. Terima kasih sudah hadir dan mewarnai seluruh hidupku sayang 🥹❤️"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 📸 FOTO 7 -->
+                    <div class="slide absolute inset-0 opacity-0 transition-all duration-700 ease-in-out">
+                        <img src="foto7.jpg" alt="Kedipan mata yang menggemaskan" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-6 md:p-8">
+                            <p class="teks-ketik text-white text-lg md:text-2xl font-medium leading-relaxed">
+                                "Kedipan kecil itu mampu membuat hatiku berdebar kencang setiap saat. Kamu adalah keindahan yang tak akan pernah cukup aku kagumi seumur hidupku sayang 🥰✨"
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- TOMBOL GESER -->
+                <button class="tombolGeser kiri absolute left-3 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 text-love-dark w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:scale-110">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <button class="tombolGeser kanan absolute right-3 top-1/2 -translate-y-1/2 bg-white/40 hover:bg-white/70 text-love-dark w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:scale-110">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 💌 BAGIAN SURAT CINTA -->
+        <section class="max-w-2xl mx-auto text-center mb-20 animasi-muncul" style="animation-delay: 0.6s;">
+            <button id="tombolSurat" class="gradien-cantik text-white font-semibold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg md:text-xl">
+                <i class="fa fa-envelope-open-o mr-2"></i> Buka Surat Cinta Khusus Buat Kamu
+            </button>
+
+            <div id="isiSurat" class="hidden mt-8 latar-tembus p-8 md:p-10 rounded-3xl shadow-xl">
+                <h2 class="font-cinta text-3xl md:text-4xl text-love-main mb-4">Untukmu, Sayangku ❤️</h2>
+                <p class="text-gray-800 text-justify leading-relaxed text-lg">
+                    Tak ada kata yang cukup indah untuk menggambarkan betapa berartinya dirimu bagiku. Setiap detik bersamamu adalah anugerah yang tak ternilai. 
+                    Meski ada jarak dan waktu, hatiku selalu milikmu selamanya. Kamu adalah keindahan yang mengubah seluruh duniaku menjadi lebih berwarna dan penuh cinta.
+                    Terima kasih telah menjadi bagian terindah dari setiap lembar kisah hidupku. Aku mencintaimu, hari ini, esok, dan selamanya 🥰
+                </p>
+                <button id="tombolKasih" class="mt-6 bg-love-soft hover:bg-love-main text-white font-medium px-6 py-3 rounded-full transition-all transform hover:scale-105">
+                    Aku Sayang Kamu ❤️
+                </button>
+            </div>
+        </section>
+
+        <!-- 🦶 KAKI HALAMAN -->
+        <footer class="text-center text-gray-700 pb-8">
+            <p class="font-cinta text-2xl md:text-3xl">Dibuat dengan sepenuh hati & cinta yang tak bertepi ❤️</p>
+            <p class="mt-2">Hanya untukmu — Hallo Sayanggg Mantan Kandung</p>
+        </footer>
+
+    </div>
+
+    <!-- 🎉 WADAH KONFETTI -->
+    <div id="wadahKonfetti" class="fixed inset-0 pointer-events-none z-50"></div>
+
+    <script>
+        // 🎬 HILANGKAN LAYAR MUAT
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('layarMuatan').style.opacity = '0';
+                setTimeout(() => document.getElementById('layarMuatan').style.display = 'none', 1000);
+            }, 1500);
+        });
+
+        // ✨ BUAT EFEK HATI & BINTANG YANG JATUH
+        const wadahEfek = document.getElementById('wadahEfek');
+        function buatEfek() {
+            const elemen = document.createElement('div');
+            elemen.className = 'absolute text-love-main/40 text-2xl';
+            elemen.style.left = `${Math.random() * 100}%`;
+            elemen.style.animationDuration = `${4 + Math.random() * 4}s`;
+            elemen.innerHTML = Math.random() > 0.5 ? '<i class="fa fa-heart animasi-hati"></i>' : '<i class="fa fa-star animasi-bintang"></i>';
+            wadahEfek.appendChild(elemen);
+            setTimeout(() => elemen.remove(), 8000);
+        }
+        setInterval(buatEfek, 350);
+
+        // 🎠 PENGATURAN SLIDESHOW FOTO
+        let indeksAktif = 0;
+        const semuaSlide = document.querySelectorAll('.slide');
+        const semuaTeks = document.querySelectorAll('.teks-ketik');
+        const totalSlide = semuaSlide.length;
+
+        function tampilkanSlide(indeks) {
+            semuaSlide.forEach(s => s.style.opacity = '0');
+            semuaTeks.forEach(t => { t.style.width = '0'; t.classList.remove('animasi-ketik'); });
+
+            indeksAktif = (indeks + totalSlide) % totalSlide;
+            semuaSlide[indeksAktif].style.opacity = '1';
+            
+            // Efek ketik otomatis
+            setTimeout(() => {
+                semuaTeks[indeksAktif].classList.add('animasi-ketik');
+                semuaTeks[indeksAktif].style.width = '100%';
+            }, 400);
+        }
+        tampilkanSlide(0);
+
+        // Tombol geser
+        document.querySelector('.tombolGeser.kiri').addEventListener('click', () => tampilkanSlide(indeksAktif - 1));
+        document.querySelector('.tombolGeser.kanan').addEventListener('click', () => tampilkanSlide(indeksAktif + 1));
+        setInterval(() => tampilkanSlide(indeksAktif + 1), 7000); // Ganti otomatis tiap 7 detik
+
+        // ⏱️ HITUNG WAKTU SEJAK JADIAN — UBAH TANGGAL DI SINI
+        function hitungWaktuJadian() {
+            const hariJadian = new Date('2024-01-01'); // Ganti jadi tanggal jadian kalian!
+            const sekarang = new Date();
+            const selisih = sekarang - hariJadian;
+
+            const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+            const tahun = Math.floor(hari / 365);
+            const bulan = Math.floor((hari % 365) / 30);
+            const sisaHari = hari % 30;
+
+            document.getElementById('hitungWaktu').innerHTML = `
+                <span class="bg-white/60 px-3 py-2 rounded-lg shadow-sm">${tahun} Tahun</span>
+                <span class="bg-white/60 px-3 py-2 rounded-lg shadow-sm">${bulan} Bulan</span>
+                <span class="bg-white/60 px-3 py-2 rounded-lg shadow-sm">${sisaHari} Hari</span>
+            `;
+        }
+        hitungWaktuJadian();
+
+        // 💌 TOMBOL BUKA SURAT
+        document.getElementById('tombolSurat').addEventListener('click', () => {
+            const surat = document.getElementById('isiSurat');
+            surat.classList.toggle('hidden');
+            if (!surat.classList.contains('hidden')) surat.scrollIntoView({behavior:'smooth'});
+        });
+
+        // 🎵 TOMBOL MUSIK
+        const musik = document.getElementById('musikLatar');
+        const tombolMusik = document.getElementById('tombolMusik');
+        tombolMusik.addEventListener('click', () => {
+            musik.paused ? musik.play() : musik.pause();
+            tombolMusik.innerHTML = musik.paused ? '<i class="fa fa-music"></i>' : '<i class="fa fa-volume-up"></i>';
+        });
+
+        // 🎉 EFEK KONFETTI SAAT KATAKAN SAYANG
+        document.getElementById('tombolKasih').addEventListener('click', () => {
+            const wadah = document.getElementById('wadahKonfetti');
+            const warna = ['#FF4B6E','#FFD700','#9D4EDD','#FF8A9F','#FFFFFF'];
+            
+            for(let i=0; i<120; i++) {
+                const butir = document.createElement('div');
+                butir.className = 'absolute w-3 h-3 rounded-full';
+                butir.style.backgroundColor = warna[Math.floor(Math.random()*warna.length)];
+                butir.style.left = `${Math.random()*100}%`;
+                butir.style.top = '-10px';
+                butir.style.animation = `jatuh ${2 + Math.random()*3}s ease-out forwards`;
+                wadah.appendChild(butir);
+                setTimeout(() => butir.remove(), 5000);
+            }
+        });
+    </script>
+</body>
+</html>
